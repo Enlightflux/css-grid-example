@@ -3,5 +3,4 @@
 Intermediate html css exercise
 
 ## Live Preview Link
-
----
+...
