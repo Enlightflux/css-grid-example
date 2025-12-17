@@ -1,6 +1,6 @@
 # css-grid-example
 ---
-Intermediate html css exercise
+Intermediate html css <br>exercise
 
 ## Live Preview Link
 ...
