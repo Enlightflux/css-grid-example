@@ -184,3 +184,27 @@ h3 {
 .trending-item > .comment {
 	grid-area: comment;
 }
+
+.logo {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+}
+.logo > img {
+	width: 30px;
+	height: 30px;
+}
+.logo-name {
+	font-size: 1.2rem;
+	font-weight: 600;
+	padding-top: 0.5rem;
+}
+
+img {
+	width: 30px;
+	height: 30px;
+}
+
+.menu-item {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+}
