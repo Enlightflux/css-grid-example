@@ -5,15 +5,10 @@
 	font-family: roboto, sans-serif;
 }
 
-/* body {
-	width: 80vw;
-	margin: auto;
-} */
-
 .container {
 	display: grid;
 	grid-template-areas: 'sidebar mainbody';
-	grid-template-columns: 1fr 5fr;
+	grid-template-columns: 1fr 4fr;
 }
 
 .sidebar {
@@ -44,22 +39,28 @@
 }
 .search-area {
 	display: grid;
-	grid-template-columns: 2fr 1fr;
-	padding: 1rem;
-	gap: 1rem;
+	grid-template-columns: 3fr 1fr;
+	padding: 1rem 2rem;
+	gap: 2rem;
+}
+
+.search {
+	display: grid;
+	grid-template-columns: 50px 1fr;
 }
 
 .profile-segment {
 	display: grid;
-	grid-template-columns: 1fr 1fr 3fr;
+	grid-template-columns: 1fr 1fr 2fr;
 	text-align: center;
+	justify-items: end;
 }
 
 .profile-options {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 2fr 1fr;
 	gap: 1rem;
-	padding: 1rem;
+	padding: 1rem 2rem;
 }
 .welcome-profile {
 	display: grid;
@@ -73,6 +74,18 @@
 .task-options {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+	text-align: center;
+	justify-items: end;
+}
+
+.task-options > .tasks {
+	border-radius: 2rem;
+	background-color: hsl(201, 79%, 46%);
+	width: 80%;
+	padding: 0.7rem 0;
+	color: white;
+	font-weight: bold;
 }
 
 .project-area {
@@ -83,9 +96,9 @@
 	grid-template-columns: repeat(1, minmax(250px, 2fr)) 1fr;
 
 	grid-template-columns: 3fr 1fr;
-	background-color: hsl(201, 60%, 90%);
+	background-color: hsl(214, 32%, 91%);
 	gap: 1rem;
-	padding: 1rem;
+	padding: 1rem 2rem;
 }
 
 .projects {
@@ -99,14 +112,15 @@
 }
 
 .card {
-	background-color: white;
+	background-color: hsl(0, 0%, 100%);
 	padding: 1rem;
-	border-radius: 1rem;
-	border-left: 3px solid tomato;
+	border-radius: 0.5rem;
+	border-left: 7px solid hsl(42, 87%, 55%);
 }
 .card:hover {
-	filter: drop-shadow(3px 5px 6px #1f93f1);
+	filter: drop-shadow(3px 5px 6px hsl(214, 30%, 80%));
 	cursor: pointer;
+	background-color: hsl(0, 0%, 98%);
 }
 
 .project-name {
@@ -132,9 +146,10 @@
 	grid-auto-flow: column;
 	justify-items: flex-end;
 	justify-content: end;
-	gap: 1rem;
+	gap: 2rem;
 	padding-top: 1rem;
 }
+
 h3 {
 	font-size: 1rem;
 	padding-bottom: 0.8rem;
@@ -149,7 +164,6 @@ h3 {
 
 .announcement-item {
 	border-bottom: 1px gray solid;
-	padding: 0.5rem 0rem 1rem 0rem;
 }
 
 .announcement-item > .title {
@@ -179,6 +193,9 @@ h3 {
 
 .trending-item > .name {
 	grid-area: name;
+	font-weight: bold;
+	font-size: 0.8rem;
+	text-transform: uppercase;
 }
 
 .trending-item > .comment {
@@ -204,7 +221,39 @@ img {
 	height: 30px;
 }
 
-.menu-item {
+.menu-item,
+.setup-item {
 	display: grid;
 	grid-template-columns: 1fr 3fr;
+}
+
+input[type='search'] {
+	border-radius: 20px;
+	background-color: hsl(214, 32%, 91%);
+	border: none;
+}
+
+.profile-name {
+	font-weight: bold;
+}
+
+.profile-name.large {
+	font-size: 1.5rem;
+}
+
+.project-options img {
+	width: 20px;
+}
+
+.announcement-item {
+	padding: 10px 10px;
+}
+
+.announcement-item > .title {
+	font-weight: bold;
+	padding-bottom: 0.5rem;
+}
+
+.announcement-container {
+	border-radius: 0.5rem;
 }
