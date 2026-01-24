@@ -32,6 +32,7 @@
 
 .logo {
   font-size: 1.5rem;
+  align-content: center;
 }
 
 .main-body {
@@ -47,6 +48,7 @@
 .search {
   display: grid;
   grid-template-columns: 50px 1fr;
+  align-items: center;
 }
 
 .profile-segment {
@@ -54,6 +56,7 @@
   grid-template-columns: 1fr 1fr 2fr;
   text-align: center;
   justify-items: end;
+  align-items: center;
 }
 
 .profile-options {
@@ -69,6 +72,7 @@
 
 .welcome-message {
   display: grid;
+  align-content: center;
 }
 
 .task-options {
@@ -86,18 +90,20 @@
   padding: 0.7rem 0;
   color: white;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.task-options > .tasks:hover {
+  background-color: hsl(201, 79%, 50%);
 }
 
 .project-area {
   display: grid;
-  grid-template-areas:
-    "projects announcements"
-    "projects trending";
+  grid-template-areas: "projects announcement-section";
   grid-template-columns: repeat(1, minmax(250px, 2fr)) 1fr;
-
   grid-template-columns: 3fr 1fr;
   background-color: hsl(214, 32%, 91%);
-  gap: 1rem;
+  gap: 2rem;
   padding: 1rem 2rem;
 }
 
@@ -129,12 +135,11 @@
   padding: 0rem 0rem 0.8rem 0rem;
 }
 
-.announcements {
-  grid-area: announcements;
-}
-
-.trending {
-  grid-area: trending;
+.announcement-section {
+  grid-area: announcement-section;
+  display: grid;
+  align-content: start;
+  gap: 2rem;
 }
 
 .project-name {
@@ -179,9 +184,7 @@ h3 {
 
 .trending-item {
   display: grid;
-  grid-template-areas:
-    "logo name"
-    "logo comment";
+  grid-template-areas: "logo name";
   justify-items: flex-start;
   justify-content: start;
   column-gap: 1rem;
@@ -191,15 +194,11 @@ h3 {
   grid-area: logo;
 }
 
-.trending-item > .name {
+.trending-item > .data {
   grid-area: name;
-  font-weight: bold;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-}
-
-.trending-item > .comment {
-  grid-area: comment;
+  display: grid;
+  align-content: center;
+  gap: 0.2rem;
 }
 
 .logo {
@@ -210,10 +209,9 @@ h3 {
   width: 30px;
   height: 30px;
 }
-.logo-name {
+.dashboard-name {
   font-size: 1.2rem;
   font-weight: 600;
-  padding-top: 0.5rem;
 }
 
 img {
@@ -225,12 +223,29 @@ img {
 .setup-item {
   display: grid;
   grid-template-columns: 1fr 4fr;
+  align-content: center;
+  align-items: center;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+}
+
+.menu-item:hover,
+.setup-item:hover {
+  background-color: hsl(201, 79%, 50%);
+  cursor: pointer;
 }
 
 input[type="search"] {
   border-radius: 20px;
   background-color: hsl(214, 32%, 91%);
   border: none;
+  height: 50px;
+  padding: 10px;
+}
+
+input[type="search"]:focus {
+  border: none;
+  outline: none;
 }
 
 .profile-name {
@@ -254,6 +269,108 @@ input[type="search"] {
   padding-bottom: 0.5rem;
 }
 
-.announcement-container {
+.announcement-container,
+.trending-segments {
   border-radius: 0.5rem;
+}
+
+.profile-icon.large {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: yellowgreen;
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+}
+
+.profile-icon.large > img {
+  width: 50px;
+  height: 50px;
+}
+
+.profile-segment .profile-icon {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: yellowgreen;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+}
+
+.trending1 .trending-logo {
+  background-color: oklch(80% 0.2 90);
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+.trending1 .data .name {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: oklch(80% 0.2 90);
+}
+
+.trending2 .trending-logo {
+  background-color: mediumseagreen;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+.trending2 .data .name {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: mediumseagreen;
+}
+.trending3 .trending-logo {
+  background-color: brown;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+.trending3 .data .name {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: brown;
+}
+
+.data > .name {
+  text-transform: lowercase;
+}
+
+.data > .name::before {
+  content: "@";
+}
+
+.profile-segment > div {
+  cursor: pointer;
+}
+
+.announcement-item {
+  cursor: pointer;
+}
+
+.announcement-item > .title::after {
+  content: "priority: high";
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: rgb(250, 189, 178);
+  border-radius: 1rem;
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.3rem;
+  color: red;
 }
